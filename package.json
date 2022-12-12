@@ -36,6 +36,7 @@
     "firebase": "^9.12.1",
     "firebase-admin": "^11.3.0",
     "ionicons": "^6.0.3",
+    "moment": "^2.29.4",
     "phonegap-plugin-barcodescanner": "^8.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",

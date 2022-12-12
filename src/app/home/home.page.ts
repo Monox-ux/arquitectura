@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-	
+
   constructor(
 	    private firestore: AngularFirestore,
 		private avatarService: AvatarService,
@@ -20,15 +20,16 @@ export class HomePage {
 		private router: Router,
 		private loadingController: LoadingController,
 		private alertController: AlertController
-	) {
-		
+	)
+  {
 	}
 
-  
+
   async logout() {
 		await this.authService.logout();
 		this.router.navigateByUrl('/', { replaceUrl: true });
 	}
 
-  
+
+
 }
