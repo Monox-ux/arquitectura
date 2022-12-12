@@ -19,12 +19,20 @@ import { FormsModule } from '@angular/forms';
 import { ErrorHandler } from '@angular/core';
 
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
+import { QRCodeModule } from 'angularx-qrcode';
+import { IonicStorageModule } from '@ionic/storage-angular';
+import{HttpClientModule} from '@angular/common/http';
+import { HttpClientJsonpModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [AppComponent,AjustesComponent],
-  imports: [BrowserModule,FirestoreModule,FormsModule,
+  imports: [NgxQRCodeModule, BrowserModule,FirestoreModule,FormsModule,
   AngularFireAuthModule,
   AngularFireDatabaseModule,
+  HttpClientModule,
   AngularFireModule.initializeApp(environment.firebase),
   IonicModule.forRoot(), AppRoutingModule,
   provideFirebaseApp(() => initializeApp(environment.firebase)),

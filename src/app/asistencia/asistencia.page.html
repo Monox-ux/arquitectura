@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Asignatura</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item *ngFor="let persona of personas">
+    <ion-label [routerLink]="['/camara']" ><h6>{{persona.nombre}}</h6></ion-label>
+    <!--<ion-label >{{persona.asistencia}}</ion-label>-->
+  </ion-item>
+
+
+
+
+
+</ion-content>
