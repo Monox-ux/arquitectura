@@ -5,6 +5,8 @@ import{
   redirectLoggedInTo,
   canActivate,
 } from '@angular/fire/auth-guard';
+import { AjustesComponent } from './compon/ajustes/ajustes.component';
+import { MenuComponent } from './compon/menu/menu.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
@@ -21,11 +23,52 @@ const routes: Routes = [
 		...canActivate(redirectUnauthorizedToLogin)
   },
   {
-    path: '**',
-    redirectTo: '',
+    path: '',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
- 
+  {
+    path:'ajustes',component:AjustesComponent,
+    ...canActivate(redirectUnauthorizedToLogin)
+
+  },
+
+  {
+    path: 'autos',
+    loadChildren: () => import('./autos/autos.module').then( m => m.AutosPageModule),
+    ...canActivate(redirectUnauthorizedToLogin)
+
+  },
+
+
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'mapa',
+    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule),
+
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'ventana',
+    loadChildren: () => import('./ventana/ventana.module').then( m => m.VentanaPageModule)
+  },
+  {
+    path: 'estacionamiento',
+    loadChildren: () => import('./estacionamiento/estacionamiento.module').then( m => m.EstacionamientoPageModule)
+  },
+  {
+    path: 'camara',
+    loadChildren: () => import('./camara/camara.module').then( m => m.CamaraPageModule)
+  },
+
+
+
 ];
 
 @NgModule({
